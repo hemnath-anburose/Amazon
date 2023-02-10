@@ -13,5 +13,7 @@ Scenario: Perfom the amazon task
 	And Click Second Highest product from the result
 	Then Switch to the product window
 	And Log the About the Items text in console
+	Then click buy and purchase the item
+	And add hem
 
 

@@ -6,8 +6,10 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -42,5 +44,9 @@ public class GLobalLibrary {
 		driver.switchTo().window(WinKeys.get(1));
 	}
 		
+	public static void selectDD(WebElement element, String text) {
+		Select dd = new Select(element);
+		dd.selectByValue(text);
+	}
 	
 }
