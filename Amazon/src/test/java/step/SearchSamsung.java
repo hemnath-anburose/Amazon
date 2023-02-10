@@ -1,19 +1,29 @@
 package step;
 
 import POM.SamsungReuses;
+import POM.wrapCart;
 import configClass.GLobalLibrary;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class SearchSamsung {
 	GLobalLibrary config = new GLobalLibrary();
 	SamsungReuses sam;
+	wrapCart wc;
 	@Given("visit amazon url")
 	public void visit_amazon_url() {
 	    config.Browser("chrome", "https://www.amazon.in/");
 	    config.maxWindow();
 	    config.ImpWait(20);
 	}
+	@Given("visit wrapcart")
+	public void visit_wrapcart() {
+		config.Browser("chrome", "https://www.wrapcart.com/");
+	    config.maxWindow();
+	    config.ImpWait(20);
+	}
+	
 	@Then("Click the Hamburger Menu from the Top Left corner")
 	public void click_the_hamburger_menu_from_the_top_left_corner() {
 	    sam = new SamsungReuses();
@@ -48,5 +58,23 @@ public class SearchSamsung {
 	public void log_the_about_the_items_text_in_console() {
 		sam.About();
 	}
-
+	@Then("click buy and purchase the item")
+	public void click_buy_and_purchase_the_item() {
+		System.out.println("dfsdf");
+	}
+	@And("click card skin")
+	public void click_card_skin() {
+		wc = new wrapCart();
+		wc.selectCardDesign();
+	}
+	@Then("click first product")
+	public void click_first_product() {
+		wc = new wrapCart();
+		wc.chooseFirstProd();
+	}
+	@And("Do add cart and buy")
+	public void Do_add_cart_and_buy() {
+		wc = new wrapCart();
+		wc.cartNbuy();
+	}
 }

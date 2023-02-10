@@ -11,7 +11,8 @@ import io.cucumber.junit.CucumberOptions;
 			glue = {"step"},
 			dryRun = false,
 			monochrome = true,
-			plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+			plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+			tags = ("@wrap")
 		)
 public class MyRunner {
 

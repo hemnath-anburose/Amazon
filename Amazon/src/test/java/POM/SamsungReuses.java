@@ -23,10 +23,13 @@ public class SamsungReuses extends GLobalLibrary{
 	private static WebElement sortBtn;
 	@FindBy(xpath = "//a[text()='Price: High to Low']")
 	private static WebElement highToLow;
-	@FindBy(xpath = "//div[@data-cel-widget=\"MAIN-SEARCH_RESULTS-2\"]/descendant::a/child::div")
+//	@FindBy(xpath = "//div[@data-cel-widget=\"MAIN-SEARCH_RESULTS-2\"]/descendant::a/child::div")
+	@FindBy(xpath = "//img[@data-image-index='2']")
 	private static WebElement secondProduct;
 	@FindBy(xpath = "//h1[text()=' About this item ']/following::ul")
 	private static WebElement aboutThis;
+	@FindBy(xpath = "//input[@id='buy-now-button']")
+	private static WebElement buyMe;
 	
 	public static WebElement getHamburgerMenu() {
 		return hamburgerMenu;
